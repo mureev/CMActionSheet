@@ -7,6 +7,21 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CMActionSheet : UIView
+typedef enum {
+	CMActionSheetButtonTypeWhite = 0,
+	CMActionSheetButtonTypeBlue,
+	CMActionSheetButtonTypeRed,
+	CMActionSheetButtonTypeGray
+} CMActionSheetButtonType;
+
+@interface CMActionSheet : NSObject
+
+@property (retain) NSString *title;
+
+- (void)addButtonWithTitle:(NSString *)title type:(CMActionSheetButtonType)type block:(void (^)())block;
+- (void)addSeparator;
+
+- (void)present;
+- (void)dismissWithClickedButtonIndex:(NSUInteger)index animated:(BOOL)animated;
 
 @end

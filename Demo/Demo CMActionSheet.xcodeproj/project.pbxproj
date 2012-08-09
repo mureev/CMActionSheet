@@ -15,6 +15,25 @@
 		ADE743BE15D384CB00937E7B /* CMActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE743BD15D384CB00937E7B /* CMActionSheet.m */; };
 		ADE743C115D3856B00937E7B /* icon-iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = ADE743C015D3856B00937E7B /* icon-iphone.png */; };
 		ADE743C315D3856E00937E7B /* icon-iphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ADE743C215D3856E00937E7B /* icon-iphone@2x.png */; };
+		ADE743FF15D393FF00937E7B /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE743FE15D393FF00937E7B /* DemoViewController.m */; };
+		ADEBE59815D3BBAA005480EA /* CMRotatableModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADEBE59715D3BBAA005480EA /* CMRotatableModalViewController.m */; };
+		ADEBE59C15D3CB9F005480EA /* UIControl+ActionBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = ADEBE59B15D3CB9F005480EA /* UIControl+ActionBlock.m */; };
+		ADEBE5D115D3DF10005480EA /* action-blue-button-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = ADEBE5C115D3DF10005480EA /* action-blue-button-selected.png */; };
+		ADEBE5D215D3DF10005480EA /* action-blue-button-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ADEBE5C215D3DF10005480EA /* action-blue-button-selected@2x.png */; };
+		ADEBE5D315D3DF10005480EA /* action-blue-button.png in Resources */ = {isa = PBXBuildFile; fileRef = ADEBE5C315D3DF10005480EA /* action-blue-button.png */; };
+		ADEBE5D415D3DF10005480EA /* action-blue-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ADEBE5C415D3DF10005480EA /* action-blue-button@2x.png */; };
+		ADEBE5D515D3DF10005480EA /* action-gray-button-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = ADEBE5C515D3DF10005480EA /* action-gray-button-selected.png */; };
+		ADEBE5D615D3DF10005480EA /* action-gray-button-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ADEBE5C615D3DF10005480EA /* action-gray-button-selected@2x.png */; };
+		ADEBE5D715D3DF10005480EA /* action-gray-button.png in Resources */ = {isa = PBXBuildFile; fileRef = ADEBE5C715D3DF10005480EA /* action-gray-button.png */; };
+		ADEBE5D815D3DF10005480EA /* action-gray-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ADEBE5C815D3DF10005480EA /* action-gray-button@2x.png */; };
+		ADEBE5D915D3DF10005480EA /* action-red-button-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ADEBE5C915D3DF10005480EA /* action-red-button-selected@2x.png */; };
+		ADEBE5DA15D3DF10005480EA /* action-red-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ADEBE5CA15D3DF10005480EA /* action-red-button@2x.png */; };
+		ADEBE5DB15D3DF10005480EA /* action-sheet-panel.png in Resources */ = {isa = PBXBuildFile; fileRef = ADEBE5CB15D3DF10005480EA /* action-sheet-panel.png */; };
+		ADEBE5DC15D3DF10005480EA /* action-sheet-panel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ADEBE5CC15D3DF10005480EA /* action-sheet-panel@2x.png */; };
+		ADEBE5DD15D3DF10005480EA /* action-white-button-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = ADEBE5CD15D3DF10005480EA /* action-white-button-selected.png */; };
+		ADEBE5DE15D3DF10005480EA /* action-white-button-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ADEBE5CE15D3DF10005480EA /* action-white-button-selected@2x.png */; };
+		ADEBE5DF15D3DF10005480EA /* action-white-button.png in Resources */ = {isa = PBXBuildFile; fileRef = ADEBE5CF15D3DF10005480EA /* action-white-button.png */; };
+		ADEBE5E015D3DF10005480EA /* action-white-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ADEBE5D015D3DF10005480EA /* action-white-button@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +50,28 @@
 		ADE743BD15D384CB00937E7B /* CMActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMActionSheet.m; sourceTree = "<group>"; };
 		ADE743C015D3856B00937E7B /* icon-iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-iphone.png"; path = "../icon-iphone.png"; sourceTree = "<group>"; };
 		ADE743C215D3856E00937E7B /* icon-iphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-iphone@2x.png"; path = "../icon-iphone@2x.png"; sourceTree = "<group>"; };
+		ADE743FD15D393FF00937E7B /* DemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoViewController.h; sourceTree = "<group>"; };
+		ADE743FE15D393FF00937E7B /* DemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoViewController.m; sourceTree = "<group>"; };
+		ADEBE59615D3BBAA005480EA /* CMRotatableModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMRotatableModalViewController.h; sourceTree = "<group>"; };
+		ADEBE59715D3BBAA005480EA /* CMRotatableModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMRotatableModalViewController.m; sourceTree = "<group>"; };
+		ADEBE59A15D3CB9F005480EA /* UIControl+ActionBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+ActionBlock.h"; sourceTree = "<group>"; };
+		ADEBE59B15D3CB9F005480EA /* UIControl+ActionBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+ActionBlock.m"; sourceTree = "<group>"; };
+		ADEBE5C115D3DF10005480EA /* action-blue-button-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "action-blue-button-selected.png"; sourceTree = "<group>"; };
+		ADEBE5C215D3DF10005480EA /* action-blue-button-selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "action-blue-button-selected@2x.png"; sourceTree = "<group>"; };
+		ADEBE5C315D3DF10005480EA /* action-blue-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "action-blue-button.png"; sourceTree = "<group>"; };
+		ADEBE5C415D3DF10005480EA /* action-blue-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "action-blue-button@2x.png"; sourceTree = "<group>"; };
+		ADEBE5C515D3DF10005480EA /* action-gray-button-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "action-gray-button-selected.png"; sourceTree = "<group>"; };
+		ADEBE5C615D3DF10005480EA /* action-gray-button-selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "action-gray-button-selected@2x.png"; sourceTree = "<group>"; };
+		ADEBE5C715D3DF10005480EA /* action-gray-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "action-gray-button.png"; sourceTree = "<group>"; };
+		ADEBE5C815D3DF10005480EA /* action-gray-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "action-gray-button@2x.png"; sourceTree = "<group>"; };
+		ADEBE5C915D3DF10005480EA /* action-red-button-selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "action-red-button-selected@2x.png"; sourceTree = "<group>"; };
+		ADEBE5CA15D3DF10005480EA /* action-red-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "action-red-button@2x.png"; sourceTree = "<group>"; };
+		ADEBE5CB15D3DF10005480EA /* action-sheet-panel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "action-sheet-panel.png"; sourceTree = "<group>"; };
+		ADEBE5CC15D3DF10005480EA /* action-sheet-panel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "action-sheet-panel@2x.png"; sourceTree = "<group>"; };
+		ADEBE5CD15D3DF10005480EA /* action-white-button-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "action-white-button-selected.png"; sourceTree = "<group>"; };
+		ADEBE5CE15D3DF10005480EA /* action-white-button-selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "action-white-button-selected@2x.png"; sourceTree = "<group>"; };
+		ADEBE5CF15D3DF10005480EA /* action-white-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "action-white-button.png"; sourceTree = "<group>"; };
+		ADEBE5D015D3DF10005480EA /* action-white-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "action-white-button@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +121,8 @@
 				ADE743BA15D3840D00937E7B /* CMActionSheet */,
 				ADE743AA15D382FF00937E7B /* AppDelegate.h */,
 				ADE743AB15D382FF00937E7B /* AppDelegate.m */,
+				ADE743FD15D393FF00937E7B /* DemoViewController.h */,
+				ADE743FE15D393FF00937E7B /* DemoViewController.m */,
 				ADE743A215D382FF00937E7B /* Supporting Files */,
 			);
 			path = Demo;
@@ -103,6 +146,10 @@
 				ADE743BF15D384E800937E7B /* Images */,
 				ADE743BC15D384CB00937E7B /* CMActionSheet.h */,
 				ADE743BD15D384CB00937E7B /* CMActionSheet.m */,
+				ADEBE59615D3BBAA005480EA /* CMRotatableModalViewController.h */,
+				ADEBE59715D3BBAA005480EA /* CMRotatableModalViewController.m */,
+				ADEBE59A15D3CB9F005480EA /* UIControl+ActionBlock.h */,
+				ADEBE59B15D3CB9F005480EA /* UIControl+ActionBlock.m */,
 			);
 			name = CMActionSheet;
 			path = ../../CMActionSheet;
@@ -111,6 +158,22 @@
 		ADE743BF15D384E800937E7B /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				ADEBE5C115D3DF10005480EA /* action-blue-button-selected.png */,
+				ADEBE5C215D3DF10005480EA /* action-blue-button-selected@2x.png */,
+				ADEBE5C315D3DF10005480EA /* action-blue-button.png */,
+				ADEBE5C415D3DF10005480EA /* action-blue-button@2x.png */,
+				ADEBE5C515D3DF10005480EA /* action-gray-button-selected.png */,
+				ADEBE5C615D3DF10005480EA /* action-gray-button-selected@2x.png */,
+				ADEBE5C715D3DF10005480EA /* action-gray-button.png */,
+				ADEBE5C815D3DF10005480EA /* action-gray-button@2x.png */,
+				ADEBE5C915D3DF10005480EA /* action-red-button-selected@2x.png */,
+				ADEBE5CA15D3DF10005480EA /* action-red-button@2x.png */,
+				ADEBE5CB15D3DF10005480EA /* action-sheet-panel.png */,
+				ADEBE5CC15D3DF10005480EA /* action-sheet-panel@2x.png */,
+				ADEBE5CD15D3DF10005480EA /* action-white-button-selected.png */,
+				ADEBE5CE15D3DF10005480EA /* action-white-button-selected@2x.png */,
+				ADEBE5CF15D3DF10005480EA /* action-white-button.png */,
+				ADEBE5D015D3DF10005480EA /* action-white-button@2x.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -168,6 +231,22 @@
 			files = (
 				ADE743C115D3856B00937E7B /* icon-iphone.png in Resources */,
 				ADE743C315D3856E00937E7B /* icon-iphone@2x.png in Resources */,
+				ADEBE5D115D3DF10005480EA /* action-blue-button-selected.png in Resources */,
+				ADEBE5D215D3DF10005480EA /* action-blue-button-selected@2x.png in Resources */,
+				ADEBE5D315D3DF10005480EA /* action-blue-button.png in Resources */,
+				ADEBE5D415D3DF10005480EA /* action-blue-button@2x.png in Resources */,
+				ADEBE5D515D3DF10005480EA /* action-gray-button-selected.png in Resources */,
+				ADEBE5D615D3DF10005480EA /* action-gray-button-selected@2x.png in Resources */,
+				ADEBE5D715D3DF10005480EA /* action-gray-button.png in Resources */,
+				ADEBE5D815D3DF10005480EA /* action-gray-button@2x.png in Resources */,
+				ADEBE5D915D3DF10005480EA /* action-red-button-selected@2x.png in Resources */,
+				ADEBE5DA15D3DF10005480EA /* action-red-button@2x.png in Resources */,
+				ADEBE5DB15D3DF10005480EA /* action-sheet-panel.png in Resources */,
+				ADEBE5DC15D3DF10005480EA /* action-sheet-panel@2x.png in Resources */,
+				ADEBE5DD15D3DF10005480EA /* action-white-button-selected.png in Resources */,
+				ADEBE5DE15D3DF10005480EA /* action-white-button-selected@2x.png in Resources */,
+				ADEBE5DF15D3DF10005480EA /* action-white-button.png in Resources */,
+				ADEBE5E015D3DF10005480EA /* action-white-button@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,6 +260,9 @@
 				ADE743A815D382FF00937E7B /* main.m in Sources */,
 				ADE743AC15D382FF00937E7B /* AppDelegate.m in Sources */,
 				ADE743BE15D384CB00937E7B /* CMActionSheet.m in Sources */,
+				ADE743FF15D393FF00937E7B /* DemoViewController.m in Sources */,
+				ADEBE59815D3BBAA005480EA /* CMRotatableModalViewController.m in Sources */,
+				ADEBE59C15D3CB9F005480EA /* UIControl+ActionBlock.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
