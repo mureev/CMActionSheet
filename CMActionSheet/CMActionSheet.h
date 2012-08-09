@@ -10,8 +10,7 @@
 typedef enum {
 	CMActionSheetButtonTypeWhite = 0,
 	CMActionSheetButtonTypeBlue,
-	CMActionSheetButtonTypeRed,
-	CMActionSheetButtonTypeGray
+	CMActionSheetButtonTypeRed
 } CMActionSheetButtonType;
 
 @interface CMActionSheet : NSObject

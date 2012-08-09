@@ -7,7 +7,6 @@
 
 #import "CMActionSheet.h"
 #import "CMRotatableModalViewController.h"
-#import "UIControl+ActionBlock.h"
 
 
 @interface CMActionSheet ()
@@ -68,8 +67,6 @@
         color = @"red";
     } else if (CMActionSheetButtonTypeWhite == type) {
         color = @"white";
-    } else if (CMActionSheetButtonTypeGray == type) {
-        color = @"gray";
     } else {
         color = @"white";
     }
@@ -87,14 +84,23 @@
     button.backgroundColor = [UIColor clearColor];
     
     [button setBackgroundImage:image forState:UIControlStateNormal];
-    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [button setTitleShadowColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    
+    if (CMActionSheetButtonTypeWhite == type) {
+        [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [button setTitleShadowColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [button setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+        [button setTitleShadowColor:[UIColor blackColor] forState:UIControlStateHighlighted];
+    } else {
+        [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [button setTitleShadowColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [button setTitleColor:[UIColor colorWithRed:40 / 255.0 green:170 / 255.0 blue:255 / 255.0 alpha:1] forState:UIControlStateHighlighted];
+        [button setTitleShadowColor:[UIColor blackColor] forState:UIControlStateHighlighted];
+    }
+    
     [button setTitle:title forState:UIControlStateNormal];
     button.accessibilityLabel = title;
     
-    [button addEventHandler:^(id sender, UIEvent *event) {
-        [self dismissWithClickedButtonIndex:index animated:YES];
-    } forControlEvent:UIControlEventTouchUpInside];
+    [button addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
     
     [self.buttons addObject:button];
     
@@ -102,7 +108,13 @@
 }
 
 - (void)addSeparator {
+    UIImage *separatorImage = [UIImage imageNamed:@"action-separator.png"];
+    separatorImage = [separatorImage stretchableImageWithLeftCapWidth:0 topCapHeight:2];
     
+    UIImageView *separator = [[[UIImageView alloc] initWithImage:separatorImage] autorelease];
+    separator.contentMode = UIViewContentModeScaleToFill;
+    separator.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    [self.buttons addObject:separator];
 }
 
 - (void)present {
@@ -112,7 +124,7 @@
         viewController.rootViewController = mainWindow.rootViewController;
         
         // Build action sheet view
-        UIView* actionSheet = [[[UIView alloc] initWithFrame:CGRectMake(0, viewController.view.frame.size.height, viewController.view.frame.size.width, 220)] autorelease];
+        UIView* actionSheet = [[[UIView alloc] initWithFrame:CGRectMake(0, viewController.view.frame.size.height, viewController.view.frame.size.width, 0)] autorelease];
         actionSheet.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
         [viewController.view addSubview:actionSheet];
         
@@ -146,11 +158,20 @@
         
         // Add action sheet items
         for (UIView *item in self.buttons) {
-            item.frame = CGRectMake(10, offset, actionSheet.frame.size.width - 10*2, 45);
-            [actionSheet addSubview:item];
-            
-            offset += 45 + 10;
+            if ([item isKindOfClass:[UIImageView class]]) {
+                item.frame = CGRectMake(0, offset, actionSheet.frame.size.width, 2);
+                [actionSheet addSubview:item];
+                
+                offset += item.frame.size.height + 10;
+            } else {
+                item.frame = CGRectMake(10, offset, actionSheet.frame.size.width - 10*2, 45);
+                [actionSheet addSubview:item];
+                
+                offset += item.frame.size.height + 10;
+            }
         }
+        
+        actionSheet.frame = CGRectMake(0, viewController.view.frame.size.height, viewController.view.frame.size.width, offset + 10);
         
         // Present window and action sheet
         self.overlayWindow.rootViewController = viewController;
@@ -168,7 +189,9 @@
                 CGPoint center = actionSheet.center;
                 center.y += 10;
                 actionSheet.center = center;
-            } completion:nil];
+            } completion:^(BOOL finished) {
+                [self retain];
+            }];
         }];
     }
 }

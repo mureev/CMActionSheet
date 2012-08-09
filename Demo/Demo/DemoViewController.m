@@ -41,6 +41,13 @@
     [actionSheet addButtonWithTitle:@"First Button" type:CMActionSheetButtonTypeWhite block:^{
         //
     }];
+    [actionSheet addButtonWithTitle:@"First Button" type:CMActionSheetButtonTypeWhite block:^{
+        //
+    }];
+    [actionSheet addSeparator];
+    [actionSheet addButtonWithTitle:@"First Button" type:CMActionSheetButtonTypeBlue block:^{
+        //
+    }];
     
     // Present
     [actionSheet present];
