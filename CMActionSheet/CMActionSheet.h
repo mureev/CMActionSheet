@@ -7,6 +7,8 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void (^CallbackBlock)(void);
+
 typedef enum {
 	CMActionSheetButtonTypeWhite = 0,
 	CMActionSheetButtonTypeBlue,
@@ -17,7 +19,7 @@ typedef enum {
 
 @property (retain) NSString *title;
 
-- (void)addButtonWithTitle:(NSString *)title type:(CMActionSheetButtonType)type block:(void (^)())block;
+- (void)addButtonWithTitle:(NSString *)title type:(CMActionSheetButtonType)type block:(CallbackBlock)block;
 - (void)addSeparator;
 
 - (void)present;

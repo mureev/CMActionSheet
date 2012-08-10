@@ -14,13 +14,14 @@
 @property (retain) UIImageView *backgroundActionView;
 @property (retain) UIWindow *overlayWindow;
 @property (retain) UIWindow *mainWindow;
-@property (retain) NSMutableArray *buttons;
+@property (retain) NSMutableArray *items;
+@property (retain) NSMutableArray *callbacks;
 
 @end
 
 @implementation CMActionSheet
 
-@synthesize title, backgroundActionView, overlayWindow, mainWindow, buttons;
+@synthesize title, backgroundActionView, overlayWindow, mainWindow, items, callbacks;
 
 - (id)init {
     self = [super init];
@@ -46,18 +47,23 @@
     self.backgroundActionView = nil;
     self.overlayWindow = nil;
     self.mainWindow = nil;
-    self.buttons = nil;
+    self.items = nil;
+    self.callbacks = nil;
     
     [super dealloc];
 }
 
-- (void)addButtonWithTitle:(NSString *)buttonTitle type:(CMActionSheetButtonType)type block:(void (^)())block {
+- (void)addButtonWithTitle:(NSString *)buttonTitle type:(CMActionSheetButtonType)type block:(CallbackBlock)block {
 	NSAssert(buttonTitle, @"Button title must not be nil!");
+	NSAssert(block, @"Block must not be nil!");
     
     NSUInteger index = 0;
     
-    if (!self.buttons) {
-        self.buttons = [NSMutableArray array];
+    if (!self.items) {
+        self.items = [NSMutableArray array];
+    }
+    if (!self.callbacks) {
+        self.callbacks = [NSMutableArray array];
     }
     
     NSString* color = nil;
@@ -107,7 +113,8 @@
     
     [button addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
     
-    [self.buttons addObject:button];
+    [self.items addObject:button];
+    [self.callbacks addObject:block];
     
     index++;
 }
@@ -119,11 +126,11 @@
     UIImageView *separator = [[[UIImageView alloc] initWithImage:separatorImage] autorelease];
     separator.contentMode = UIViewContentModeScaleToFill;
     separator.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-    [self.buttons addObject:separator];
+    [self.items addObject:separator];
 }
 
 - (void)present {
-    if (self.buttons && self.buttons.count > 0) {
+    if (self.items && self.items.count > 0) {
         self.mainWindow = [UIApplication sharedApplication].keyWindow;
         CMRotatableModalViewController *viewController = [[CMRotatableModalViewController new] autorelease];
         viewController.rootViewController = mainWindow.rootViewController;
@@ -145,7 +152,7 @@
                             constrainedToSize:CGSizeMake(actionSheet.frame.size.width-10*2, 1000)
                                 lineBreakMode:UILineBreakModeWordWrap];
             
-            UILabel *labelView = [[UILabel alloc] initWithFrame:CGRectMake(10, offset, actionSheet.frame.size.width-10*2, size.height)];
+            UILabel *labelView = [[[UILabel alloc] initWithFrame:CGRectMake(10, offset, actionSheet.frame.size.width-10*2, size.height)] autorelease];
             labelView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
             labelView.font = [UIFont systemFontOfSize:18];
             labelView.numberOfLines = 0;
@@ -164,7 +171,7 @@
         // Add action sheet items
         NSUInteger tag = 100;
         
-        for (UIView *item in self.buttons) {
+        for (UIView *item in self.items) {
             if ([item isKindOfClass:[UIImageView class]]) {
                 item.frame = CGRectMake(0, offset, actionSheet.frame.size.width, 2);
                 [actionSheet addSubview:item];
@@ -198,6 +205,7 @@
                 center.y += 10;
                 actionSheet.center = center;
             } completion:^(BOOL finished) {
+                // we retain self until with dismiss action sheet
                 [self retain];
             }];
         }];
@@ -217,10 +225,13 @@
         self.overlayWindow.hidden = YES;
         [self.mainWindow makeKeyWindow];
         
+        // now we can release self
         [self release];
     }];
     
     // Call callback
+    CallbackBlock callback = [self.callbacks objectAtIndex:index];
+    callback();
 }
 
 

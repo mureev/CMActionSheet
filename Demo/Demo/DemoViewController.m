@@ -39,17 +39,11 @@
     
     // Customize
     [actionSheet addButtonWithTitle:@"First Button" type:CMActionSheetButtonTypeWhite block:^{
-        //
-    }];
-    [actionSheet addButtonWithTitle:@"Second Button" type:CMActionSheetButtonTypeWhite block:^{
-        //
-    }];
-    [actionSheet addButtonWithTitle:@"Red Button" type:CMActionSheetButtonTypeRed block:^{
-        //
+        NSLog(@"Dismiss action sheet with \"First Button\"");
     }];
     [actionSheet addSeparator];
     [actionSheet addButtonWithTitle:@"Close Button" type:CMActionSheetButtonTypeBlue block:^{
-        //
+        NSLog(@"Dismiss action sheet with \"Close Button\"");
     }];
     
     // Present
