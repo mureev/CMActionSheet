@@ -190,7 +190,7 @@
             center.y -= actionSheet.frame.size.height;
             actionSheet.center = center;
         } completion:^(BOOL finished) {
-            [UIView animateWithDuration:0.1 delay:0.0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
+            [UIView animateWithDuration:0.05 delay:0.0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
                 CGPoint center = actionSheet.center;
                 center.y += 10;
                 actionSheet.center = center;

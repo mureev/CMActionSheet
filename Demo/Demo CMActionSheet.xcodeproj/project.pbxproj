@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		AD3DA1DA15D3FA4A00002BEA /* action-separator.png in Resources */ = {isa = PBXBuildFile; fileRef = AD3DA1D815D3FA4A00002BEA /* action-separator.png */; };
 		AD3DA1DB15D3FA4A00002BEA /* action-separator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD3DA1D915D3FA4A00002BEA /* action-separator@2x.png */; };
+		AD46785915D4CD1200FEA48F /* action-red-button-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = AD46785815D4CD1200FEA48F /* action-red-button-selected.png */; };
+		AD46785C15D4CD1E00FEA48F /* action-red-button.png in Resources */ = {isa = PBXBuildFile; fileRef = AD46785B15D4CD1E00FEA48F /* action-red-button.png */; };
 		ADE7439C15D382FF00937E7B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADE7439B15D382FF00937E7B /* UIKit.framework */; };
 		ADE7439E15D382FF00937E7B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADE7439D15D382FF00937E7B /* Foundation.framework */; };
 		ADE743A015D382FF00937E7B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADE7439F15D382FF00937E7B /* CoreGraphics.framework */; };
@@ -36,6 +38,8 @@
 /* Begin PBXFileReference section */
 		AD3DA1D815D3FA4A00002BEA /* action-separator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "action-separator.png"; sourceTree = "<group>"; };
 		AD3DA1D915D3FA4A00002BEA /* action-separator@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "action-separator@2x.png"; sourceTree = "<group>"; };
+		AD46785815D4CD1200FEA48F /* action-red-button-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "action-red-button-selected.png"; sourceTree = "<group>"; };
+		AD46785B15D4CD1E00FEA48F /* action-red-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "action-red-button.png"; sourceTree = "<group>"; };
 		ADE7439715D382FF00937E7B /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADE7439B15D382FF00937E7B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		ADE7439D15D382FF00937E7B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -153,7 +157,9 @@
 				ADEBE5C215D3DF10005480EA /* action-blue-button-selected@2x.png */,
 				ADEBE5C315D3DF10005480EA /* action-blue-button.png */,
 				ADEBE5C415D3DF10005480EA /* action-blue-button@2x.png */,
+				AD46785815D4CD1200FEA48F /* action-red-button-selected.png */,
 				ADEBE5C915D3DF10005480EA /* action-red-button-selected@2x.png */,
+				AD46785B15D4CD1E00FEA48F /* action-red-button.png */,
 				ADEBE5CA15D3DF10005480EA /* action-red-button@2x.png */,
 				AD3DA1D815D3FA4A00002BEA /* action-separator.png */,
 				AD3DA1D915D3FA4A00002BEA /* action-separator@2x.png */,
@@ -234,6 +240,8 @@
 				ADEBE5E015D3DF10005480EA /* action-white-button@2x.png in Resources */,
 				AD3DA1DA15D3FA4A00002BEA /* action-separator.png in Resources */,
 				AD3DA1DB15D3FA4A00002BEA /* action-separator@2x.png in Resources */,
+				AD46785915D4CD1200FEA48F /* action-red-button-selected.png in Resources */,
+				AD46785C15D4CD1E00FEA48F /* action-red-button.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
