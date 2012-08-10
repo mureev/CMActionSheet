@@ -35,17 +35,20 @@
 
 - (void)showActionSheet {
     CMActionSheet *actionSheet = [[[CMActionSheet alloc] init] autorelease];
-    actionSheet.title = @"Test Action sheet";
+    //actionSheet.title = @"Test Action sheet";
     
     // Customize
     [actionSheet addButtonWithTitle:@"First Button" type:CMActionSheetButtonTypeWhite block:^{
         //
     }];
-    [actionSheet addButtonWithTitle:@"First Button" type:CMActionSheetButtonTypeWhite block:^{
+    [actionSheet addButtonWithTitle:@"Second Button" type:CMActionSheetButtonTypeWhite block:^{
+        //
+    }];
+    [actionSheet addButtonWithTitle:@"Red Button" type:CMActionSheetButtonTypeRed block:^{
         //
     }];
     [actionSheet addSeparator];
-    [actionSheet addButtonWithTitle:@"First Button" type:CMActionSheetButtonTypeBlue block:^{
+    [actionSheet addButtonWithTitle:@"Close Button" type:CMActionSheetButtonTypeBlue block:^{
         //
     }];
     

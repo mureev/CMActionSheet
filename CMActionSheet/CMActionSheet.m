@@ -90,15 +90,20 @@
         [button setTitleShadowColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [button setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
         [button setTitleShadowColor:[UIColor blackColor] forState:UIControlStateHighlighted];
-    } else {
+    } else if (CMActionSheetButtonTypeBlue == type) {
         [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [button setTitleShadowColor:[UIColor blackColor] forState:UIControlStateNormal];
         [button setTitleColor:[UIColor colorWithRed:40 / 255.0 green:170 / 255.0 blue:255 / 255.0 alpha:1] forState:UIControlStateHighlighted];
         [button setTitleShadowColor:[UIColor blackColor] forState:UIControlStateHighlighted];
+    } else {
+        [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [button setTitleShadowColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [button setTitleColor:[UIColor colorWithRed:255 / 255.0 green:40 / 255.0 blue:60 / 255.0 alpha:1] forState:UIControlStateHighlighted];
+        [button setTitleShadowColor:[UIColor blackColor] forState:UIControlStateHighlighted];
     }
     
-    [button setTitle:title forState:UIControlStateNormal];
-    button.accessibilityLabel = title;
+    [button setTitle:buttonTitle forState:UIControlStateNormal];
+    button.accessibilityLabel = buttonTitle;
     
     [button addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
     
