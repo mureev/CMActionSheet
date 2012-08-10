@@ -162,6 +162,8 @@
         }
         
         // Add action sheet items
+        NSUInteger tag = 100;
+        
         for (UIView *item in self.buttons) {
             if ([item isKindOfClass:[UIImageView class]]) {
                 item.frame = CGRectMake(0, offset, actionSheet.frame.size.width, 2);
@@ -170,6 +172,7 @@
                 offset += item.frame.size.height + 10;
             } else {
                 item.frame = CGRectMake(10, offset, actionSheet.frame.size.width - 10*2, 45);
+                item.tag = tag++;
                 [actionSheet addSubview:item];
                 
                 offset += item.frame.size.height + 10;
@@ -185,12 +188,12 @@
         [self.overlayWindow makeKeyWindow];
         
         [UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationCurveEaseOut animations:^{
-            self.overlayWindow.alpha = 1.0;
+            self.overlayWindow.alpha = 1;
             CGPoint center = actionSheet.center;
             center.y -= actionSheet.frame.size.height;
             actionSheet.center = center;
         } completion:^(BOOL finished) {
-            [UIView animateWithDuration:0.05 delay:0.0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
+            [UIView animateWithDuration:0.01 delay:0.0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
                 CGPoint center = actionSheet.center;
                 center.y += 10;
                 actionSheet.center = center;
@@ -202,7 +205,20 @@
 }
 
 - (void)dismissWithClickedButtonIndex:(NSUInteger)index animated:(BOOL)animated {
-    // Hide window and action sheet
+    // Hide window and action sheet    
+    UIView *actionSheet = self.overlayWindow.rootViewController.view.subviews.lastObject;
+    
+    [UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationCurveEaseOut animations:^{
+        self.overlayWindow.alpha = 0;
+        CGPoint center = actionSheet.center;
+        center.y += actionSheet.frame.size.height;
+        actionSheet.center = center;
+    } completion:^(BOOL finished) {
+        self.overlayWindow.hidden = YES;
+        [self.mainWindow makeKeyWindow];
+        
+        [self release];
+    }];
     
     // Call callback
 }
