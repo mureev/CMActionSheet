@@ -89,6 +89,9 @@
     //button.titleLabel.adjustsFontSizeToFitWidth = YES;
     //button.titleLabel.minimumFontSize = 10;
     
+    // Add 6px padding
+    [button setTitleEdgeInsets:UIEdgeInsetsMake(6.0, 6.0, 6.0, 6.0)];
+    
     button.titleLabel.textAlignment = UITextAlignmentCenter;
     button.titleLabel.shadowOffset = CGSizeMake(0, -1);
     button.backgroundColor = [UIColor clearColor];
@@ -219,7 +222,7 @@
 }
 
 - (void)dismissWithClickedButtonIndex:(NSUInteger)index animated:(BOOL)animated {
-    // Hide window and action sheet    
+    // Hide window and action sheet
     UIView *actionSheet = self.overlayWindow.rootViewController.view.subviews.lastObject;
     
     [UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationCurveEaseOut animations:^{
