@@ -84,8 +84,11 @@
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     button.titleLabel.font = [UIFont boldSystemFontOfSize:20];
-    button.titleLabel.minimumFontSize = 6;
-    button.titleLabel.adjustsFontSizeToFitWidth = YES;
+    button.titleLabel.adjustsFontSizeToFitWidth = NO;
+    
+    //button.titleLabel.adjustsFontSizeToFitWidth = YES;
+    //button.titleLabel.minimumFontSize = 10;
+    
     button.titleLabel.textAlignment = UITextAlignmentCenter;
     button.titleLabel.shadowOffset = CGSizeMake(0, -1);
     button.backgroundColor = [UIColor clearColor];
