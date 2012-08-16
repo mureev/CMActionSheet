@@ -55,7 +55,6 @@
 
 - (void)addButtonWithTitle:(NSString *)buttonTitle type:(CMActionSheetButtonType)type block:(CallbackBlock)block {
 	NSAssert(buttonTitle, @"Button title must not be nil!");
-	NSAssert(block, @"Block must not be nil!");
     
     NSUInteger index = 0;
     
@@ -73,6 +72,8 @@
         color = @"red";
     } else if (CMActionSheetButtonTypeWhite == type) {
         color = @"white";
+    } else if (CMActionSheetButtonTypeGray == type) {
+        color = @"gray";
     } else {
         color = @"white";
     }
@@ -96,6 +97,9 @@
         [button setTitleShadowColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [button setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
         [button setTitleShadowColor:[UIColor blackColor] forState:UIControlStateHighlighted];
+    } else if (CMActionSheetButtonTypeGray == type) {
+        [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [button setTitleShadowColor:[UIColor blackColor] forState:UIControlStateNormal];
     } else if (CMActionSheetButtonTypeBlue == type) {
         [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [button setTitleShadowColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -114,7 +118,12 @@
     [button addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
     
     [self.items addObject:button];
-    [self.callbacks addObject:block];
+    
+    if (block) {
+        [self.callbacks addObject:[[block copy] autorelease]];
+    } else {
+        [self.callbacks addObject:[NSNull null]];
+    }
     
     index++;
 }
@@ -200,14 +209,8 @@
             center.y -= actionSheet.frame.size.height;
             actionSheet.center = center;
         } completion:^(BOOL finished) {
-            [UIView animateWithDuration:0.01 delay:0.0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
-                CGPoint center = actionSheet.center;
-                center.y += 10;
-                actionSheet.center = center;
-            } completion:^(BOOL finished) {
-                // we retain self until with dismiss action sheet
-                [self retain];
-            }];
+            // we retain self until with dismiss action sheet
+            [self retain];
         }];
     }
 }
@@ -231,7 +234,11 @@
     
     // Call callback
     CallbackBlock callback = [self.callbacks objectAtIndex:index];
-    callback();
+    if ([callbacks isKindOfClass:[NSNull class]]) {
+        // Do nothing... It's just placeholder
+    } else {
+        callback();
+    }
 }
 
 

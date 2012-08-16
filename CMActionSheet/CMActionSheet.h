@@ -12,7 +12,8 @@ typedef void (^CallbackBlock)(void);
 typedef enum {
 	CMActionSheetButtonTypeWhite = 0,
 	CMActionSheetButtonTypeBlue,
-	CMActionSheetButtonTypeRed
+	CMActionSheetButtonTypeRed,
+	CMActionSheetButtonTypeGray
 } CMActionSheetButtonType;
 
 @interface CMActionSheet : NSObject

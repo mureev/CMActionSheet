@@ -42,7 +42,7 @@
         NSLog(@"Dismiss action sheet with \"First Button\"");
     }];
     [actionSheet addSeparator];
-    [actionSheet addButtonWithTitle:@"Close Button" type:CMActionSheetButtonTypeBlue block:^{
+    [actionSheet addButtonWithTitle:@"Close Button" type:CMActionSheetButtonTypeGray block:^{
         NSLog(@"Dismiss action sheet with \"Close Button\"");
     }];
     
